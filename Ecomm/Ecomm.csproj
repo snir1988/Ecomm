@@ -82,10 +82,14 @@
     <Compile Include="AdminManage\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\BLL\Category.cs" />
+    <Content Include="App_Code\BLL\Order.cs" />
     <Compile Include="App_Code\BLL\Product.cs" />
     <Compile Include="App_Code\BLL\Users.cs" />
+    <Compile Include="DALL\Category.cs" />
+    <Compile Include="DALL\Order.cs" />
     <Compile Include="DALL\Product.cs" />
-    <Compile Include="DALL\UsersDAL.cs" />
+    <Compile Include="DALL\Users.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
