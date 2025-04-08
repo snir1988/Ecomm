@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using DALL;
+using DAL;
 
-namespace Ecomm.BLL
+namespace BLL
 {
-	public class Order
+    public class Order
     {
         public int Oid { get; set; }
         public int Uid { get; set; }
@@ -15,12 +15,12 @@ namespace Ecomm.BLL
 
         public static Order GetByID(int Oid)
         {
-            return new Order();
+            return OrderDAL.GetByID(Oid);
         }
 
         public static List<Order> GetAll()
         {
-            return new List<Order>();
+            return OrderDAL.GetAll();
         }
 
         public int save()
@@ -30,7 +30,7 @@ namespace Ecomm.BLL
 
         public static int DeletByID(int Oid)
         {
-            return 0;
+            return OrderDAL.DeletByID(Oid);
         }
     }
 }

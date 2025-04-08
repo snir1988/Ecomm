@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using DALL;
+using DAL;
+
 
 namespace BLL
 {
@@ -13,19 +14,23 @@ namespace BLL
         public float Price { get; set; }
         public string Pdesc { get; set; }
 
+        public int Cid { get; set; }
+        public string Picname { get; set; }
+        public int Status { get; set; }
+
         public static Product GetByID(int Pid)
         {
-            return new Product();
+            return ProductDAL.GetByID(Pid);
         }
 
         public static List<Product> GetAll()
         {
-            return new List<Product>();
+            return ProductDAL.GetAll();
         }
 
         public int save()
         {
-            return 0;
+            return ProductDAL.Save(this);
         }
 
         public static int DeletByID(int Pid)

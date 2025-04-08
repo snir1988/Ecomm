@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Ecomm.DALL;
+using DAL;
 
 namespace BLL
 {
-	public class Users
+    public class Users
     {
         public int Uid { get; set; }
         public string Email { get; set; }
@@ -17,12 +17,12 @@ namespace BLL
 
         public static Users GetByID(int Uid)
         {
-            return new Users();
+            return UsersDAL.GetByID(Uid);
         }
 
         public static List<Users> GetAll()
         {
-            return new List<Users>();
+            return UsersDAL.GetAll();
         }
 
         public int save()
@@ -32,7 +32,7 @@ namespace BLL
 
         public static int DeletByID(int Uid)
         {
-            return 0;
+            return UsersDAL.DeletByID(Uid);
         }
     }
 }

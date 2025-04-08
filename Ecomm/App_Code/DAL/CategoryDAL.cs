@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using BLL;
 
-namespace Ecomm.DALL
+namespace DAL
 {
-	public class Category
+    public class CategoryDAL
     {
-        public static List<BLL.Category> GetAll()
+        public static List<Category> GetAll()
         {
-            return new List<BLL.Category>();
+            return new List<Category>();
         }
 
-        public static BLL.Category GetByID(int Cid)
+        public static Category GetByID(int Cid)
         {
-            return new BLL.Category();
+            return new Category();
         }
 
         public static int DeletByID(int Cid)

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using DAL;
 
-namespace Ecomm.BLL
+namespace BLL
 {
-	public class Category
+    public class Category
     {
         public int Cid { get; set; }
         public string Cname { get; set; }
@@ -13,12 +14,12 @@ namespace Ecomm.BLL
 
         public static Category GetByID(int Cid)
         {
-            return new Category();
+            return CategoryDAL.GetByID(Cid);
         }
 
         public static List<Category> GetAll()
         {
-            return new List<Category>();
+            return CategoryDAL.GetAll();
         }
 
         public int save()
@@ -28,7 +29,7 @@ namespace Ecomm.BLL
 
         public static int DeletByID(int Cid)
         {
-            return 0;
+            return CategoryDAL.DeletByID(Cid);
         }
     }
 }

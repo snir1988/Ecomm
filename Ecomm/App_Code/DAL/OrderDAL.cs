@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using BLL;
 
-namespace Ecomm.DALL
+namespace DAL
 {
-	public class Order
+    public class OrderDAL
     {
-        public static List<BLL.Order> GetAll()
+        public static List<Order> GetAll()
         {
-            return new List<BLL.Order>();
+            return new List<Order>();
         }
 
-        public static BLL.Order GetByID(int Oid)
+        public static Order GetByID(int Oid)
         {
-            return new BLL.Order();
+            return new Order();
         }
 
         public static int DeletByID(int Oid)
