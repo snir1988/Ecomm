@@ -43,11 +43,11 @@ namespace DAL
             string sql = $"SELECT * FROM T_Product";
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader Dr = cmd.ExecuteReader();
-            List<Product> lst = new List<BLL.Product>();
+            List<Product> lst = new List<Product>();
 
             while (Dr.Read() == true)
             {
-                BLL.Product Tmp = new BLL.Product()
+                Product Tmp = new Product()
                 {
                     Pid = (int)Dr["Pid"],
                     Pname = (string)Dr["Pname"],
