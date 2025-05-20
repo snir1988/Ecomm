@@ -27,8 +27,9 @@ namespace BLL
 
         public int save()
         {
-            return 0;
+            return UsersDAL.Save(this); // קריאה למתודת השמירה שב-DAL
         }
+
 
         public static int DeletByID(int Uid)
         {

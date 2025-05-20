@@ -15,8 +15,11 @@ namespace Ecomm.AdminManage
 			if(!IsPostBack)
 			{
                 List<Product> Lst = Product.GetAll();
-				RptProds.DataSource = Lst;
+
+                RptProds.DataSource = Lst;
 				RptProds.DataBind();
+
+                Page.DataBind();
             }
         }
 	}

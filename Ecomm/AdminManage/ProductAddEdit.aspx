@@ -10,6 +10,7 @@
      <div class="card-header">
        <strong class="card-title">פרטי המוצר</strong>
      </div>
+       <asp:HiddenField ID="HidPid" runat="server" Value="-1" />
      <div class="card-body">
        
          <div class="form-row">
@@ -31,12 +32,21 @@
   </div>
   <div class="form-group col-md-6">
     <label for="TextPdesc">תיאור</label>
-        <asp:TextBox ID="TextPdesc" runat="server" class="form-control"Textmode="MultiLine" Columns="40" Rows="10" placeholder="נא הזינו תיאור המוצר" />
+<asp:TextBox ID="TextPdesc" runat="server" TextMode="MultiLine" Columns="40" Rows="10" CssClass="form-control" />
 
+  </div>
+               <div class="form-group col-md-4">
+                   <div class="from-group mb-3">
+                <label for="DDLStatus">סטטאוס המוצר</label>
+        <asp:DropDownList ID="DDLStatus" runat="server" CssClass="form-control">
+                       <asp:ListItem Text="פעיל" Value="1"></asp:ListItem>
+                       <asp:ListItem Text="לא פעיל" Value="0"></asp:ListItem>
+            </asp:DropDownList>
+    </div>
   </div>
 </div>
         
-         <asp:Button ID="BtnSave" Text="שמירה" runat="server" class="btn btn-primary" />
+         <asp:Button ID="BtnSave" Text="שמירה" runat="server" class="btn btn-primary" OnClick="BtnSave_Click" CssClass="btn btn-primary" />
        
      </div>
    </div>

@@ -191,6 +191,8 @@
     <Content Include="AdminManage\ui-progress.html" />
     <Content Include="AdminManage\ui-tabs-accordion.html" />
     <Content Include="AdminManage\ui-typograpy.html" />
+    <Content Include="AdminManage\UserAddEdit.aspx" />
+    <Content Include="AdminManage\UserList.aspx" />
     <Content Include="AdminManage\widgets.html" />
     <Content Include="default.aspx" />
     <Content Include="Defualt.aspx" />
@@ -221,6 +223,20 @@
     <Compile Include="AdminManage\ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminManage\UserAddEdit.aspx.cs">
+      <DependentUpon>UserAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManage\UserAddEdit.aspx.designer.cs">
+      <DependentUpon>UserAddEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManage\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManage\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\BLL\Category.cs" />
     <Compile Include="App_Code\BLL\Order.cs" />
     <Compile Include="App_Code\BLL\Product.cs" />
@@ -230,6 +246,7 @@
     <Compile Include="App_Code\DAL\ProductDAL.cs" />
     <Compile Include="App_Code\DAL\UsersDAL.cs" />
     <Compile Include="App_Code\DBcontext.cs" />
+    <Compile Include="App_Code\GlobFunc.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

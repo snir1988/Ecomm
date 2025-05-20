@@ -11,62 +11,62 @@ namespace Ecomm.AdminManage
 {
 
 
-    public partial class ProductAddEdit
+    public partial class UserAddEdit
     {
 
         /// <summary>
-        /// HidPid control.
+        /// HidUid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HidPid;
+        protected global::System.Web.UI.WebControls.HiddenField HidUid;
 
         /// <summary>
-        /// TxtPName control.
+        /// TxtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPName;
+        protected global::System.Web.UI.WebControls.TextBox TxtEmail;
 
         /// <summary>
-        /// TextPrice control.
+        /// TxtPass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextPrice;
+        protected global::System.Web.UI.WebControls.TextBox TxtPass;
 
         /// <summary>
-        /// TxtPicname control.
+        /// TxtFullName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPicname;
+        protected global::System.Web.UI.WebControls.TextBox TxtFullName;
 
         /// <summary>
-        /// TextPdesc control.
+        /// TxtAdress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextPdesc;
+        protected global::System.Web.UI.WebControls.TextBox TxtAdress;
 
         /// <summary>
-        /// DDLStatus control.
+        /// TxtPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLStatus;
+        protected global::System.Web.UI.WebControls.TextBox TxtPhone;
 
         /// <summary>
         /// BtnSave control.

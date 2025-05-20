@@ -25,9 +25,9 @@ namespace DAL
             {
                 Tmp = new BLL.Product()
                 {
-                    Pid = (int)Dr["Pid"],
-                    Pname = (string)Dr["Pname"],
-                    Price = (float)Dr["Price"],
+                    Pid = int.Parse(Dr["Pid"]+""),
+                    Pname = Dr["Pname"]+"",
+                    Price = float.Parse(Dr["Price"]+""),
                     Pdesc = (string)Dr["Pdesc"]
                 };
             }
@@ -37,26 +37,24 @@ namespace DAL
 
         public static List<Product> GetAll()
         {
-            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection conn = new SqlConnection(connstr);
-            conn.Open();
+            DbContext db = new DbContext();
             string sql = $"SELECT * FROM T_Product";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            SqlDataReader Dr = cmd.ExecuteReader();
+            DataTable dt = db.Execute(sql);
             List<Product> lst = new List<Product>();
 
-            while (Dr.Read() == true)
+            for (int i=0; i<dt.Rows.Count;i++)
             {
                 Product Tmp = new Product()
                 {
-                    Pid = (int)Dr["Pid"],
-                    Pname = (string)Dr["Pname"],
-                    Price = (float)Dr["Price"],
-                    Pdesc = (string)Dr["Pdesc"]
+                    Pid = Convert.ToInt32(dt.Rows[i]["Pid"]),
+                    Pname = (string)dt.Rows[i]["Pname"],
+                    Price = Convert.ToSingle(dt.Rows[i]["Price"]),
+                    Pdesc = (string)dt.Rows[i]["Pdesc"],
+                    Picname= (string)dt.Rows[i]["Picname"]
                 };
                 lst.Add(Tmp);
             }
-            conn.Close();
+            db.Close();
             return lst;
         }
 
@@ -73,7 +71,7 @@ namespace DAL
             }
             else//עדכון מוצר חדש
             {
-                Sql = $"Update T_product Set";
+                Sql = $"Update T_product Set ";
                 Sql += $"Pname=N'{Tmp.Pname}',";
                 Sql += $"Price={Tmp.Price},";
                 Sql += $"Pdesc=N'{Tmp.Pdesc}',";

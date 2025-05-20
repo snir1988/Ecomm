@@ -25,7 +25,7 @@ namespace BLL
 
         public static List<Product> GetAll()
         {
-            return new List<Product>();
+            return ProductDAL.GetAll();
         }
 
         public int save()

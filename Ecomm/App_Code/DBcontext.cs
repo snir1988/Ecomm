@@ -15,7 +15,7 @@ public class DATA
         public DbContext()
         {
             string ConnStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection Conn = new SqlConnection(ConnStr);
+             Conn = new SqlConnection(ConnStr);
             Conn.Open();
         }
 
