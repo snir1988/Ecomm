@@ -87,6 +87,8 @@
     <Content Include="AdminManage\auth-register.html" />
     <Content Include="AdminManage\auth-resetpw.html" />
     <Content Include="AdminManage\calendar.html" />
+    <Content Include="AdminManage\CategoryAddEdit.aspx" />
+    <Content Include="AdminManage\CategoryList.aspx" />
     <Content Include="AdminManage\chart-apexcharts.html" />
     <Content Include="AdminManage\chart-chartjs.html" />
     <Content Include="AdminManage\chart-inline.html" />
@@ -164,6 +166,8 @@
     <Content Include="AdminManage\js\tinycolor-min.js" />
     <Content Include="AdminManage\js\topojson.min.js" />
     <Content Include="AdminManage\js\uppy.min.js" />
+    <Content Include="AdminManage\OrderAddEdit.aspx" />
+    <Content Include="AdminManage\OrderList.aspx" />
     <Content Include="AdminManage\page-404.html" />
     <Content Include="AdminManage\page-500.html" />
     <Content Include="AdminManage\page-blank.html" />
@@ -208,6 +212,34 @@
     </Compile>
     <Compile Include="AdminManage\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManage\CategoryAddEdit.aspx.cs">
+      <DependentUpon>CategoryAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManage\CategoryAddEdit.aspx.designer.cs">
+      <DependentUpon>CategoryAddEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManage\CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManage\CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManage\OrderAddEdit.aspx.cs">
+      <DependentUpon>OrderAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManage\OrderAddEdit.aspx.designer.cs">
+      <DependentUpon>OrderAddEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManage\OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManage\OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminManage\ProductAddEdit.aspx.cs">
       <DependentUpon>ProductAddEdit.aspx</DependentUpon>

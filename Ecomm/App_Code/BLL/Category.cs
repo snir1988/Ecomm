@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using DAL;
 
 namespace BLL
 {
     public class Category
     {
-        public int Cid { get; set; }
-        public string Cname { get; set; }
-        public string Cdesc { get; set; }
+        public int Cid { get; set; } // מזהה קטגוריה
+        public string Cname { get; set; } // שם קטגוריה
+        public DateTime Added { get; set; } // תאריך הוספה
 
         public static Category GetByID(int Cid)
         {
@@ -22,9 +20,9 @@ namespace BLL
             return CategoryDAL.GetAll();
         }
 
-        public int save()
+        public static int Save(Category c)
         {
-            return 0;
+            return CategoryDAL.Save(c);
         }
 
         public static int DeletByID(int Cid)

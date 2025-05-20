@@ -99,6 +99,20 @@
         </a>
       </li>
 
+        <li class="nav-item w-100">
+  <a class="nav-link" href="CategoryList.aspx">
+    <i class="fe fe-layers fe-16"></i>
+    <span class="ml-3 item-text">ניהול קטגוריות</span>
+  </a>
+</li>
+
+<li class="nav-item w-100">
+  <a class="nav-link" href="OrderList.aspx">
+    <i class="fe fe-shopping-cart fe-16"></i>
+    <span class="ml-3 item-text">ניהול הזמנות</span>
+  </a>
+</li>
+
     </ul>
 
         <li class="nav-item dropdown">

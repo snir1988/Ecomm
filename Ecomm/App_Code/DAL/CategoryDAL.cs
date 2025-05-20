@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient; 
-using System.Linq;
-using System.Web;
+using System.Data.SqlClient;
 using BLL;
 using static DATA;
 
@@ -16,19 +14,19 @@ namespace DAL
             SqlConnection conn = new SqlConnection(connstr);
             conn.Open();
 
-            string sql = $"SELECT * FROM T_Category WHERE Cid = {Cid}";
+            string sql = $"SELECT * FROM Category WHERE Cid = {Cid}";
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader Dr = cmd.ExecuteReader();
 
             Category Tmp = null;
 
-            if (Dr.Read() == true)
+            if (Dr.Read())
             {
                 Tmp = new BLL.Category()
                 {
                     Cid = (int)Dr["Cid"],
                     Cname = (string)Dr["Cname"],
-                    Cdesc = (string)Dr["Cdesc"]
+                    Added = (DateTime)Dr["Added"]
                 };
             }
 
@@ -42,19 +40,19 @@ namespace DAL
             SqlConnection conn = new SqlConnection(connstr);
             conn.Open();
 
-            string sql = $"SELECT * FROM T_Category";
+            string sql = $"SELECT * FROM Category ORDER BY Added DESC";
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader Dr = cmd.ExecuteReader();
 
             List<Category> lst = new List<BLL.Category>();
 
-            while (Dr.Read() == true)
+            while (Dr.Read())
             {
                 BLL.Category Tmp = new BLL.Category()
                 {
                     Cid = (int)Dr["Cid"],
                     Cname = (string)Dr["Cname"],
-                    Cdesc = (string)Dr["Cdesc"]
+                    Added = (DateTime)Dr["Added"]
                 };
 
                 lst.Add(Tmp);
@@ -66,38 +64,30 @@ namespace DAL
 
         public static int Save(Category Tmp)
         {
-            DbContext Db = new DbContext(); // יצירת אובייקט חיבור
+            DbContext Db = new DbContext();
             string Sql;
-
-            if (Tmp.Cid == -1) // הוספה
-            {
-                Sql = $"Insert into T_Category (Cname, Cdesc) ";
-                Sql += $"values (N'{Tmp.Cname}', N'{Tmp.Cdesc}')";
-            }
-            else // עדכון
-            {
-                Sql = $"Update T_Category Set ";
-                Sql += $"Cname = N'{Tmp.Cname}',";
-                Sql += $"Cdesc = N'{Tmp.Cdesc}' ";
-                Sql += $"Where Cid = {Tmp.Cid}";
-            }
-
-            int RetVal = Db.ExecuteNonQuery(Sql);
 
             if (Tmp.Cid == -1)
             {
-                Sql = $"SELECT Max(Cid) FROM T_Category WHERE Cname = '{Tmp.Cname}'"; // אופציונלי: שליפת מזהה חדש
+                Sql = $"INSERT INTO Category (Cname, Added) ";
+                Sql += $"VALUES (N'{Tmp.Cname}', '{Tmp.Added:yyyy-MM-dd HH:mm:ss}')";
+            }
+            else
+            {
+                Sql = $"UPDATE Category SET ";
+                Sql += $"Cname = N'{Tmp.Cname}' ";
+                Sql += $"WHERE Cid = {Tmp.Cid}";
             }
 
+            int RetVal = Db.ExecuteNonQuery(Sql);
             Db.Close();
             return RetVal;
         }
 
-        
         public static int DeletByID(int Cid)
         {
             DbContext Db = new DbContext();
-            string sql = $"DELETE FROM T_Category WHERE Cid = {Cid}";
+            string sql = $"DELETE FROM Category WHERE Cid = {Cid}";
             int i = Db.ExecuteNonQuery(sql);
             Db.Close();
             return i;

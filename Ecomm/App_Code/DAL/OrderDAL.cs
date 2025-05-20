@@ -20,7 +20,7 @@ namespace DAL // מרחב השמות של שכבת הגישה לנתונים (Da
             conn.Open(); // פתיחת החיבור
 
             // יצירת שאילתת SQL לשליפת הזמנה לפי מזהה
-            string sql = $"SELECT * FROM T_Order WHERE Oid = {Oid}";
+            string sql = $"SELECT * FROM T_Orders WHERE Oid = {Oid}";
             SqlCommand cmd = new SqlCommand(sql, conn); // יצירת פקודת SQL לביצוע
             SqlDataReader Dr = cmd.ExecuteReader(); // הרצת השאילתה והחזרת תוצאות
 
@@ -50,7 +50,7 @@ namespace DAL // מרחב השמות של שכבת הגישה לנתונים (Da
             SqlConnection conn = new SqlConnection(connstr); // יצירת אובייקט חיבור למסד
             conn.Open(); // פתיחת החיבור
 
-            string sql = $"SELECT * FROM T_Order"; // שאילתה לשליפת כל ההזמנות
+            string sql = $"SELECT * FROM T_Orders"; // שאילתה לשליפת כל ההזמנות
             SqlCommand cmd = new SqlCommand(sql, conn); // הכנת פקודת SQL
             SqlDataReader Dr = cmd.ExecuteReader(); // הרצת הפקודה וקבלת תוצאות
 
@@ -83,13 +83,13 @@ namespace DAL // מרחב השמות של שכבת הגישה לנתונים (Da
             if (Tmp.Oid == -1)
             {
                 // שאילתה להוספת הזמנה חדשה
-                Sql = $"Insert into T_Order (Uid, OrderDate, Total) ";
+                Sql = $"Insert into T_Orders (Uid, OrderDate, Total) ";
                 Sql += $"values ({Tmp.Uid}, '{Tmp.OrderDate:yyyy-MM-dd}', {Tmp.Total})";
             }
             else
             {
                 // שאילת עדכון להזמנה קיימת – בסגנון שאתה משתמש בו
-                Sql = $"Update T_Order Set ";
+                Sql = $"Update T_Orders Set ";
                 Sql += $"Uid = {Tmp.Uid},";
                 Sql += $"OrderDate = '{Tmp.OrderDate:yyyy-MM-dd}',";
                 Sql += $"Total = {Tmp.Total} ";
@@ -101,7 +101,7 @@ namespace DAL // מרחב השמות של שכבת הגישה לנתונים (Da
             if (Tmp.Oid == -1)
             {
                 // אופציונלי: אם נרצה לשלוף את המזהה של ההזמנה החדשה שנוספה
-                Sql = $"SELECT Max(Oid) FROM T_Order WHERE Uid = {Tmp.Uid}";
+                Sql = $"SELECT Max(Oid) FROM T_Orders WHERE Uid = {Tmp.Uid}";
             }
 
             Db.Close(); // סגירת החיבור למסד הנתונים
@@ -111,7 +111,7 @@ namespace DAL // מרחב השמות של שכבת הגישה לנתונים (Da
         public static int DeletByID(int Oid)
         {
             DbContext Db = new DbContext(); // יצירת חיבור למסד
-            string sql = $"DELETE FROM T_Order WHERE Oid = {Oid}"; // שאילתת מחיקה
+            string sql = $"DELETE FROM T_Orders WHERE Oid = {Oid}"; // שאילתת מחיקה
             int i = Db.ExecuteNonQuery(sql); // ביצוע המחיקה והחזרת מספר השורות שנמחקו
             Db.Close(); // סגירת החיבור
             return i; // החזרת התוצאה
