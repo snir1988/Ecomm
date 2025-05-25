@@ -24,6 +24,15 @@ namespace Ecomm.AdminManage
         protected global::System.Web.UI.WebControls.HiddenField HidPid;
 
         /// <summary>
+        /// DDLCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDLCategory;
+
+        /// <summary>
         /// TxtPName control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Ecomm.AdminManage
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextPrice;
+
+        /// <summary>
+        /// UplPic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload UplPic;
 
         /// <summary>
         /// TxtPicname control.

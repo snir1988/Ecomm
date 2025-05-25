@@ -66,8 +66,8 @@ namespace DAL
 
             if (Tmp.Pid == -1)//במידה ונבצע הוספת חדש
             {
-                Sql = $"Insert into T_product (Pname,Price,Pdesc,Pdesc,Picname,Cid) values";
-                Sql += $" values (N'{Tmp.Pname}',{Tmp.Price},N'{Tmp.Pdesc}',N'{Tmp.Picname}',{Tmp.Status},{Tmp.Cid})";
+                Sql = $"Insert into T_product (Pname,Price,Pdesc,Picname,Status,Cid) values";
+                Sql += $" (N'{Tmp.Pname}',{Tmp.Price},N'{Tmp.Pdesc}',N'{Tmp.Picname}',{Tmp.Status},{Tmp.Cid})";
             }
             else//עדכון מוצר חדש
             {

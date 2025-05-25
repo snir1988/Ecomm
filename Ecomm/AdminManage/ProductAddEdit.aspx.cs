@@ -13,9 +13,16 @@ namespace Ecomm.AdminManage
 		{
 			if (!IsPostBack)
 			{
-				string Pid = Request["Pid"] +""; // קבלת הפרמטר של קוד המוצר בטעינה הראשונית של הדף
+                DDLCategory.DataSource = Category.GetAll();
+                DDLCategory.DataValueField = "Cid";
+                DDLCategory.DataTextField = "Cname";
+                DDLCategory.DataBind();
+                string Pid = Request["Pid"] +""; // קבלת הפרמטר של קוד המוצר בטעינה הראשונית של הדף
 				if (Pid!= "")
 				{
+
+
+
 					Product Tmp = Product.GetByID(int.Parse(Pid));// שליפת המוצר עם קוד המוצר שקיבלנו
 					if (Tmp != null)
 					{
@@ -25,6 +32,7 @@ namespace Ecomm.AdminManage
                         TextPrice.Text = Tmp.Price + "";
 						DDLStatus.SelectedValue = Tmp.Status + "";
                         HidPid.Value = Tmp.Pid + "";
+						DDLCategory.SelectedValue = Tmp.Cid+"";
 
 
                     }
@@ -37,6 +45,16 @@ namespace Ecomm.AdminManage
 		}
 		protected void BtnSave_Click(object sender, EventArgs e)
 		{
+			string Picname = "";
+			if (UplPic.HasFile)
+			{
+				string FileName = GlobFunc.GetRandStr(8);
+				int ind = UplPic.FileName.LastIndexOf('.');
+				string Ext = UplPic.FileName.Substring(ind);
+				Picname = FileName + Ext;
+				UplPic.SaveAs(Server.MapPath("/uploads/prods/img/" + Picname));
+				TxtPicname.Text = Picname;
+			}
 			Product Tmp = new Product()
 			{
 				Pid= int.Parse(HidPid.Value),
