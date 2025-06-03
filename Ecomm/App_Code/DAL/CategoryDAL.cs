@@ -10,7 +10,7 @@ namespace DAL
     {
         public static Category GetByID(int Cid)
         {
-            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
+            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\שניר\\source\\repos\\Ecomm\\Ecomm\\App_Data\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection conn = new SqlConnection(connstr);
             conn.Open();
 
@@ -36,7 +36,7 @@ namespace DAL
 
         public static List<Category> GetAll()
         {
-            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
+            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\שניר\\source\\repos\\Ecomm\\Ecomm\\App_Data\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection conn = new SqlConnection(connstr);
             conn.Open();
 

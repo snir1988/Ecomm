@@ -13,7 +13,7 @@ namespace DAL
     {
         public static Product GetByID(int Pid)
         {
-            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
+            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\שניר\\source\\repos\\Ecomm\\Ecomm\\App_Data\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection conn = new SqlConnection(connstr);
             conn.Open();
             string sql = $"SELECT * FROM T_Product where Pid ={Pid}";

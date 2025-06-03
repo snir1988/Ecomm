@@ -35,5 +35,20 @@ namespace BLL
         {
             return UsersDAL.DeletByID(Uid);
         }
+
+        public static Users CheckLogin(string Email,string Pass)
+        {
+            return UsersDAL.CheckLogin(Email, Pass);
+        }
+
+        public static void Add(Users value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void Update(int id, Users value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

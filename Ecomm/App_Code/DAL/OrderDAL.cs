@@ -15,7 +15,7 @@ namespace DAL // מרחב השמות של שכבת הגישה לנתונים (Da
         public static Order GetByID(int Oid)
         {
             // מחרוזת החיבור למסד הנתונים – בדיוק כמו בקבצי DAL אחרים
-            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
+            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\שניר\\source\\repos\\Ecomm\\Ecomm\\App_Data\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection conn = new SqlConnection(connstr); // יצירת אובייקט חיבור למסד
             conn.Open(); // פתיחת החיבור
 
@@ -46,7 +46,7 @@ namespace DAL // מרחב השמות של שכבת הגישה לנתונים (Da
         // פונקציה המחזירה את כל ההזמנות מהמסד
         public static List<Order> GetAll()
         {
-            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
+            string connstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\שניר\\source\\repos\\Ecomm\\Ecomm\\App_Data\\EcommDB.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection conn = new SqlConnection(connstr); // יצירת אובייקט חיבור למסד
             conn.Open(); // פתיחת החיבור
 
