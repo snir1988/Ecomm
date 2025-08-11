@@ -22,5 +22,24 @@ namespace EcomWebApi.controllers
         {
             return Product.GetByID(id);
         }
+
+        public Product post([FromBody] Product value) 
+        { 
+            value.Pid = -1;
+            value.save();
+            return value;
+        }
+
+        public Product put(int id,[FromBody] Product value)
+        {
+            value.Pid = id;
+            value.save();
+            return value;
+        }
+
+        public int delete(int id) 
+        { 
+        return Product.DeletByID(id);
+        }
     }
 }

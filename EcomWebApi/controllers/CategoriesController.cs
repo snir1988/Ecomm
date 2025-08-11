@@ -20,5 +20,13 @@ namespace EcomWebApi.controllers
         {
             return Category.GetByID(id);
         }
+
+        public Category put(int id, [FromBody] Category value)
+        {
+            value.Cid = id;
+            value.Save(value);
+            return value;
+        }
+
     }
 }

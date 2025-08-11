@@ -354,6 +354,7 @@
     <Content Include="default.aspx" />
     <Content Include="Defualt.aspx" />
     <Content Include="fonts\feather.svg" />
+    <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="js\apexcharts.custom.js" />
     <Content Include="js\apexcharts.min.js" />
@@ -480,6 +481,9 @@
     </Compile>
     <Compile Include="Defualt.aspx.designer.cs">
       <DependentUpon>Defualt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

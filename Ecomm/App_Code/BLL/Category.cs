@@ -20,7 +20,7 @@ namespace BLL
             return CategoryDAL.GetAll();
         }
 
-        public static int Save(Category c)
+        public int Save(Category c)
         {
             return CategoryDAL.Save(c);
         }

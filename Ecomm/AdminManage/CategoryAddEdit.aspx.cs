@@ -23,17 +23,17 @@ namespace Ecomm.AdminManage
             }
         }
 
-        protected void BtnSave_Click(object sender, EventArgs e)
-        {
-            Category c = new Category()
-            {
-                Cid = int.Parse(HidCid.Value),
-                Cname = TxtName.Text,
-                Added = DateTime.Now
-            };
+        //protected void BtnSave_Click(object sender, EventArgs e)
+        //{
+        //    Category c = new Category()
+        //    {
+        //        Cid = int.Parse(HidCid.Value),
+        //        Cname = TxtName.Text,
+        //        Added = DateTime.Now
+        //    };
 
-            Category.Save(c);
-            Response.Redirect("CategoryList.aspx");
-        }
+        //    Category.Save(c);
+        //    Response.Redirect("CategoryList.aspx");
+        //}
     }
 }

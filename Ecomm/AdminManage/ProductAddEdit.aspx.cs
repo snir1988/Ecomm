@@ -65,6 +65,7 @@ namespace Ecomm.AdminManage
 				Status=int.Parse(DDLStatus.SelectedValue)
             };
 			Tmp.save();
+            Application["Prods"] = Product.GetAll();
 			Response.Redirect("ProductList.aspx");
 		}
 	}
